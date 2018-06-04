@@ -55,7 +55,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 @Service("iOrderService")
 public class OrderServiceImpl implements IOrderService {
@@ -94,7 +94,7 @@ public class OrderServiceImpl implements IOrderService {
     public  ServerResponse createOrder(Integer userId,Integer shippingId){
 
         //从购物车中获取数据
-        List<Cart> cartList = cartMapper.selectCheckedCartByUserId(userId);
+        List<Cart> cartList = cartMapper.selectCheckedCartByUserId(userId);//选择已经勾选的
 
         //计算这个订单的总价
         ServerResponse serverResponse = this.getCartOrderItem(userId,cartList);
@@ -238,6 +238,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
 
+    //生成订单号
     private long generateOrderNo(){
         long currentTime =System.currentTimeMillis();
         return currentTime+new Random().nextInt(100);
@@ -275,7 +276,7 @@ public class OrderServiceImpl implements IOrderService {
             orderItem.setUserId(userId);
             orderItem.setProductId(product.getId());
             orderItem.setProductName(product.getName());
-            orderItem.setProductImage(product.getMainImage());
+            orderItem.setProductImage(product.getMainImage());//主图
             orderItem.setCurrentUnitPrice(product.getPrice());
             orderItem.setQuantity(cartItem.getQuantity());
             orderItem.setTotalPrice(BigDecimalUtil.mul(product.getPrice().doubleValue(),cartItem.getQuantity()));

@@ -3,7 +3,7 @@ package com.mmall.vo;
 import java.math.BigDecimal;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 public class CartProductVo {
 
@@ -126,5 +126,24 @@ public class CartProductVo {
 
     public void setLimitQuantity(String limitQuantity) {
         this.limitQuantity = limitQuantity;
+    }
+
+    @Override
+    public String toString() {
+        return "CartProductVo{" +
+                "limitQuantity='" + limitQuantity + '\'' +
+                ", productChecked=" + productChecked +
+                ", productTotalPrice=" + productTotalPrice +
+                ", productPrice=" + productPrice +
+                ", productSubtitle='" + productSubtitle + '\'' +
+                ", quantity=" + quantity +
+                ", userId=" + userId +
+                ", id=" + id +
+                ", productId=" + productId +
+                ", productName='" + productName + '\'' +
+                ", productMainImage='" + productMainImage + '\'' +
+                ", productStatus=" + productStatus +
+                ", productStock=" + productStock +
+                '}';
     }
 }

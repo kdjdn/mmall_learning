@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 @Service("iShippingService")
 public class ShippingServiceImpl implements IShippingService {
@@ -25,7 +25,7 @@ public class ShippingServiceImpl implements IShippingService {
 
     public ServerResponse add(Integer userId, Shipping shipping){
         shipping.setUserId(userId);
-        int rowCount = shippingMapper.insert(shipping);
+        int rowCount = shippingMapper.insert(shipping);//mysql生成的id会加到这里的id
         if(rowCount > 0){
             Map result = Maps.newHashMap();
             result.put("shippingId",shipping.getId());
@@ -57,7 +57,7 @@ public class ShippingServiceImpl implements IShippingService {
         if(shipping == null){
             return ServerResponse.createByErrorMessage("无法查询到该地址");
         }
-        return ServerResponse.createBySuccess("更新地址成功",shipping);
+        return ServerResponse.createBySuccess("查询地址成功",shipping);
     }
 
 

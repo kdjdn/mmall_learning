@@ -4,8 +4,8 @@
   <resultMap id="BaseResultMap" type="com.mmall.pojo.OrderItem" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="order_no" jdbcType="BIGINT" javaType="java.lang.Long" />
+      <arg column="user_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="product_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="product_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="product_image" jdbcType="VARCHAR" javaType="java.lang.String" />

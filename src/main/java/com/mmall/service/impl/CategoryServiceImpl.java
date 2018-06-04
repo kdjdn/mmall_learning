@@ -6,6 +6,7 @@ import com.mmall.common.ServerResponse;
 import com.mmall.dao.CategoryMapper;
 import com.mmall.pojo.Category;
 import com.mmall.service.ICategoryService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -17,12 +18,13 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 @Service("iCategoryService")
+@Slf4j
 public class CategoryServiceImpl implements ICategoryService {
 
-    private Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
+   // private Logger logger = LoggerFactory.getLogger(CategoryServiceImpl.class);
 
     @Autowired
     private CategoryMapper categoryMapper;
@@ -62,7 +64,8 @@ public class CategoryServiceImpl implements ICategoryService {
     public ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId){
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
         if(CollectionUtils.isEmpty(categoryList)){
-            logger.info("未找到当前分类的子分类");
+            //logger.info("未找到当前分类的子分类");
+            log.info("未找到当前分类的子分类");
         }
         return ServerResponse.createBySuccess(categoryList);
     }
@@ -94,9 +97,10 @@ public class CategoryServiceImpl implements ICategoryService {
         if(category != null){
             categorySet.add(category);
         }
-        //查找子节点,递归算法一定要有一个退出的条件
+        //查找子节点,递归算法一定要有一个退出的条件（子节点是否为空）
+        //mybatis返回集合的处理是：如果没有查到不会返回null，categoryList不会是一个null
         List<Category> categoryList = categoryMapper.selectCategoryChildrenByParentId(categoryId);
-        for(Category categoryItem : categoryList){
+        for(Category categoryItem : categoryList){//categoryList为空时结束
             findChildCategory(categorySet,categoryItem.getId());
         }
         return categorySet;

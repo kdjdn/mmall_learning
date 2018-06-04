@@ -3,7 +3,7 @@ package com.mmall.service;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 public interface IFileService {
 

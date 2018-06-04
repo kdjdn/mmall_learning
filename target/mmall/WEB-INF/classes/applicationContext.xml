@@ -12,7 +12,7 @@
     <context:component-scan base-package="com.mmall" annotation-config="true"/>
 
     <!--<context:annotation-config/>-->
-    <aop:aspectj-autoproxy/>
+    <aop:aspectj-autoproxy/><!--用于开启Spring对@AspectJ风格切面的支持-->
 
 
     <context:property-placeholder location="classpath:datasource.properties"/>

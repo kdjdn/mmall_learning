@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 
 @Controller
@@ -30,7 +30,7 @@ public class ShippingController {
 
     @RequestMapping("add.do")
     @ResponseBody
-    public ServerResponse add(HttpSession session,Shipping shipping){
+    public ServerResponse add(HttpSession session,Shipping shipping){//Shipping shipping这里就是springmvc对象绑定
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         if(user ==null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
@@ -46,7 +46,7 @@ public class ShippingController {
         if(user ==null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iShippingService.del(user.getId(),shippingId);
+        return iShippingService.del(user.getId(),shippingId);//防止横向越权，加userId,防止传入userId，要用登录的
     }
 
     @RequestMapping("update.do")
@@ -56,7 +56,7 @@ public class ShippingController {
         if(user ==null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iShippingService.update(user.getId(),shipping);
+        return iShippingService.update(user.getId(),shipping);//防止横向越权，加userId,防止传入userId，要用登录的
     }
 
 
@@ -67,7 +67,7 @@ public class ShippingController {
         if(user ==null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),ResponseCode.NEED_LOGIN.getDesc());
         }
-        return iShippingService.select(user.getId(),shippingId);
+        return iShippingService.select(user.getId(),shippingId);//防止横向越权，加userId,防止传入userId，要用登录的
     }
 
 

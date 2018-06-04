@@ -22,7 +22,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 @Service("iCartService")
 public class CartServiceImpl implements ICartService {
@@ -155,11 +155,9 @@ public class CartServiceImpl implements ICartService {
                     cartProductVo.setProductChecked(cartItem.getChecked());
                 }
 
-                if (cartItem != null) {
-                    if (cartItem.getChecked() == Const.Cart.CHECKED) {
-                        //如果已经勾选,增加到整个的购物车总价中
-                        cartTotalPrice = BigDecimalUtil.add(cartTotalPrice.doubleValue(), cartProductVo.getProductTotalPrice().doubleValue());
-                    }
+                if (cartItem.getChecked() == Const.Cart.CHECKED) {
+                    //如果已经勾选,增加到整个的购物车总价中
+                    cartTotalPrice = BigDecimalUtil.add(cartTotalPrice.doubleValue(), cartProductVo.getProductTotalPrice().doubleValue());
                     cartProductVoList.add(cartProductVo);
                 }
             }

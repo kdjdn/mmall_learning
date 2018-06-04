@@ -31,7 +31,7 @@
     delete from mmall_shipping
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mmall.pojo.Shipping" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="com.mmall.pojo.Shipping" useGeneratedKeys="true" keyProperty="id"><!--useGeneratedKeys是否使用generator生成的key-->
     insert into mmall_shipping (id, user_id, receiver_name, 
       receiver_phone, receiver_mobile, receiver_province, 
       receiver_city, receiver_district, receiver_address, 
@@ -210,7 +210,7 @@
   </select>
 
 
-  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="map">
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="map"><!--一个参数用map也可以-->
     SELECT
     <include refid="Base_Column_List"/>
     from mmall_shipping

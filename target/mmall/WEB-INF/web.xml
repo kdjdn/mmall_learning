@@ -14,7 +14,7 @@
             <param-value>UTF-8</param-value>
         </init-param>
         <init-param>
-            <param-name>forceEncoding</param-name>
+            <param-name>forceEncoding</param-name><!--forceEncoding用来设置是否理会request.getCharacterEncoding()方法，设置为true则强制覆盖之前的编码格式 -->
             <param-value>true</param-value>
         </init-param>
     </filter>
@@ -28,14 +28,12 @@
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
 
-    <listener>
+    <listener> <!--ContextLoaderListener的作用就是启动Web容器时，自动装配ApplicationContext的配置信息-->
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <context-param>
+    <context-param>    <!-- spring的核心配置文件的名字 叫做 applicationContext.xml ,如果没有显式声明，则 系统默认 在WEB-INF/applicationContext.xml-->
         <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:applicationContext.xml
-        </param-value>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
 
     <servlet>
@@ -43,9 +41,6 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
-
-
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.do</url-pattern>

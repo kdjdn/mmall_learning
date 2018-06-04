@@ -14,7 +14,7 @@ import org.springframework.util.StringUtils;
 import java.util.UUID;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
@@ -100,6 +100,15 @@ public class UserServiceImpl implements IUserService {
         int resultCount = userMapper.checkAnswer(username,question,answer);
         if(resultCount>0){
             //说明问题及问题答案是这个用户的,并且是正确的
+            /**
+             * 是javaJDK提供的一个自动生成主键的方法。UUID(Universally Unique Identifier)全局唯一标识符,
+             * 是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的，是由一个十六位的数字组成,表现出来的 形式。
+             * 由以下几部分的组合：
+             *   当前日期和时间(UUID的第一个部分与时间有关，如果你在生成一个UUID之后，过几秒又生成一个UUID，则第一个部分不 同，其余相同)，
+             *   时钟序列，
+             *   全局唯一的IEEE机器识别号（如果有网卡，从网卡获得，没有网卡以其他方式获得），
+             * UUID的唯一缺陷在于生成的结果串会比较长。
+             */
             String forgetToken = UUID.randomUUID().toString();
             TokenCache.setKey(TokenCache.TOKEN_PREFIX+username,forgetToken);
             return ServerResponse.createBySuccess(forgetToken);

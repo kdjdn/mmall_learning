@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by geely
+ * Created by Administrator
  */
 @Service("iProductService")
 public class ProductServiceImpl implements IProductService {
@@ -136,8 +136,9 @@ public class ProductServiceImpl implements IProductService {
             ProductListVo productListVo = assembleProductListVo(productItem);
             productListVoList.add(productListVo);
         }
-        PageInfo pageResult = new PageInfo(productList);
-        pageResult.setList(productListVoList);
+        //PageHelper是AOP做的，所以如果脱离了目标，切面不会命中，那么pagehepler自动增加sql里的limit和offset等就弄不上
+        PageInfo pageResult = new PageInfo(productList);//返回pageInfo，用aop做的切面。所以必须和之前的dao层有请求才会添加分页相关信息
+        pageResult.setList(productListVoList);//将productListVoList放入pageResult里面的list集合
         return ServerResponse.createBySuccess(pageResult);
     }
 
@@ -196,6 +197,7 @@ public class ProductServiceImpl implements IProductService {
         List<Integer> categoryIdList = new ArrayList<Integer>();
 
         if(categoryId != null){
+            System.out.println("222222222");
             Category category = categoryMapper.selectByPrimaryKey(categoryId);
             if(category == null && StringUtils.isBlank(keyword)){
                 //没有该分类,并且还没有关键字,这个时候返回一个空的结果集,不报错
