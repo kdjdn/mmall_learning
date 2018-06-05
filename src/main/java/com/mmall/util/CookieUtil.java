@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class CookieUtil {
 
-    private final static String COOKIE_DOMAIN = ".happymmall.com";//一级域名
+    private final static String COOKIE_DOMAIN = "192.168.225.128";//
     private final static String COOKIE_NAME = "mmall_login_token";//这个名字要种到客户端浏览器上
 
 
@@ -31,7 +31,7 @@ public class CookieUtil {
         return null;
     }
 
-    //X:domain=".happymmall.com"  下面请求都能拿到
+    //X:domain=".happymmall.com"  一级域名下面请求都能拿到
     //a:A.happymmall.com            cookie:domain=A.happymmall.com;path="/"  a拿不到b c d e
     //b:B.happymmall.com            cookie:domain=B.happymmall.com;path="/"  b拿不到a c d e
     //c:A.happymmall.com/test/cc    cookie:domain=A.happymmall.com;path="/test/cc" 能拿到a e  拿不到b d

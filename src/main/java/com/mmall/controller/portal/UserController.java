@@ -91,7 +91,7 @@ public class UserController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得用户信息");
         }
         String userJsonStr = RedisPoolUtil.get(loginToken);
-        User uer = JsonUtil.string2Obj(userJsonStr,User.class);
+        User user = JsonUtil.string2Obj(userJsonStr,User.class);
 
         if(user != null){
             return ServerResponse.createBySuccess(user);
