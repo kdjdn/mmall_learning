@@ -12,6 +12,9 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/src/main/resources.beta" />
+          <root url="file://$MODULE_DIR$/src/main/resources.dev" />
+          <root url="file://$MODULE_DIR$/src/main/resources.prod" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -30,6 +33,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources.beta" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources.dev" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources.prod" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />

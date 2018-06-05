@@ -40,7 +40,7 @@ public class CookieUtil {
 
     public static void writeLoginToken(HttpServletResponse response,String token){
         Cookie ck = new Cookie(COOKIE_NAME,token);
-        ck.setDomain(COOKIE_DOMAIN);//主要用来在两个不同名称但是后缀相同的网站地址上.这样两个网站就能使用同一个cookie了，可以设置多个域的方法
+        //ck.setDomain(COOKIE_DOMAIN);//主要用来在两个不同名称但是后缀相同的网站地址上.这样两个网站就能使用同一个cookie了，可以设置多个域的方法
         ck.setPath("/");//代表设置在根目录
         ck.setHttpOnly(true);//防止脚本共计带来的信息泄露风险，不许通过脚本访问cookie，tomcat6没有这个方法
         //单位是秒。
