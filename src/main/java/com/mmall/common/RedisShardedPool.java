@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * redis分片连接池
  * Created by Administrator
  */
 public class RedisShardedPool {
@@ -45,7 +46,8 @@ public class RedisShardedPool {
 
         config.setBlockWhenExhausted(true);//连接耗尽的时候，是否阻塞，false会抛出异常，true阻塞直到超时。默认为true。
 
-        JedisShardInfo info1 = new JedisShardInfo(redis1Ip,redis1Port,1000*2);
+        JedisShardInfo info1 = new JedisShardInfo(redis1Ip,redis1Port,1000*2);//单位毫秒，不加里面默认2秒
+        //info1.setPassword();如果有密码
 
         JedisShardInfo info2 = new JedisShardInfo(redis2Ip,redis2Port,1000*2);
 
@@ -54,7 +56,7 @@ public class RedisShardedPool {
         jedisShardInfoList.add(info1);
         jedisShardInfoList.add(info2);
 
-        pool = new ShardedJedisPool(config,jedisShardInfoList, Hashing.MURMUR_HASH, Sharded.DEFAULT_KEY_TAG_PATTERN);
+        pool = new ShardedJedisPool(config,jedisShardInfoList, Hashing.MURMUR_HASH, Sharded.DEFAULT_KEY_TAG_PATTERN);//默认的MURMUR_HASH，对应一致性算法
     }
 
     static{
@@ -85,7 +87,7 @@ public class RedisShardedPool {
         }
         returnResource(jedis);
 
-//        pool.destroy();//临时调用，销毁连接池中的所有连接
+//        pool.destroy();//临时调用，销毁连接池中的所有连接，main函数结束自动销毁
         System.out.println("program is end");
 
 

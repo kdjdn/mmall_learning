@@ -33,7 +33,7 @@ public class RedisPool {
 
         config.setBlockWhenExhausted(true);//连接耗尽的时候，是否阻塞，false会抛出异常，true阻塞直到超时。默认为true。
 
-        pool = new JedisPool(config,redisIp,redisPort,1000*2);//单位毫秒
+        pool = new JedisPool(config,redisIp,redisPort,1000*2);//单位毫秒，不加里面默认2秒
     }
 
     static{
