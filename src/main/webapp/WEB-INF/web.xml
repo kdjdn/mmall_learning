@@ -33,9 +33,9 @@
         <url-pattern>*.do</url-pattern>
     </filter-mapping>  -->
 
-    <!--8-5更换的filter，二期新增重置session时间的filter-->
+    <!--8-5更换的filter，用spring session 二期新增重置session时间的filter-->
     <filter>
-        <filter-name>springSessionRepositoryFilter</filter-name>
+        <filter-name>springSessionRepositoryFilter</filter-name><!--这个在AbstractHttpSessionApplicationInitilizer类里面有默认名字-->
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
     <filter-mapping>

@@ -9,13 +9,15 @@
      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="com.mmall" annotation-config="true"/>
+    <context:component-scan base-package="com.mmall" annotation-config="true">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/><!--Controller交给spring mvc扫描-->
+    </context:component-scan>
 
-    <!--<context:annotation-config/>-->
+    <!--<context:annotation-config/>对已经注册的bean进行操作，激活已经注册的bean，让bean工作 上面已经指定annotation-config="true"，这里就不用了-->
     <aop:aspectj-autoproxy/>
 
 
-    <context:property-placeholder location="classpath:datasource.properties"/>
+    <!--<context:property-placeholder location="classpath:datasource.properties"/>-->
     <import resource="applicationContext-spring-session.xml" />
     <import resource="applicationContext-datasource.xml"/>
 

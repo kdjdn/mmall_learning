@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
+ * 使用spring session实现单点登录
  * Created by Administrator
  */
 @Controller
