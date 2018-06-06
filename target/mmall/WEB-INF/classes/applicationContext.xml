@@ -16,6 +16,7 @@
 
 
     <context:property-placeholder location="classpath:datasource.properties"/>
+    <import resource="applicationContext-spring-session.xml" />
     <import resource="applicationContext-datasource.xml"/>
 
 
