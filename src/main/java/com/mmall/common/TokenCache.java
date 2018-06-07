@@ -12,7 +12,6 @@ import java.util.concurrent.TimeUnit;
  * Created by Administrator
  */
 public class TokenCache {
-
     private static Logger logger = LoggerFactory.getLogger(TokenCache.class);
 
     public static final String TOKEN_PREFIX = "token_";
