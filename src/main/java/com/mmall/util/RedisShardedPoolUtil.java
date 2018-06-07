@@ -63,6 +63,7 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    //分布式锁V3，防死锁
     public static String getSet(String key,String value){
         ShardedJedis jedis = null;
         String result = null;
@@ -109,6 +110,7 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    //分布式锁使用
     public static Long setnx(String key,String value){
         ShardedJedis jedis = null;
         Long result = null;

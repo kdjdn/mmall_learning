@@ -216,4 +216,12 @@
     </if>
   </select>
 
+  <select id="selectStockByProductId" resultType="int" parameterType="java.lang.Integer">
+    select
+    stock
+    from mmall_product
+    where id = #{id}
+    for update  <!--悲观锁，一定要使用主键，用主键就是行锁，否则这个所编程table锁，-->
+
+  </select>
 </mapper>
