@@ -80,8 +80,13 @@
       <file leaf-file-name="mmall.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources.dev/mmall.properties">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+=======
+            <state vertical-scroll-proportion="2.4827585">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+>>>>>>> 46c6e0e4bc0f2c029ff68ccbcf58d4a00f22cf57
               <folding />
             </state>
           </provider>
@@ -1273,13 +1278,21 @@
       <workItem from="1527249710317" duration="4150000" />
       <workItem from="1528161584118" duration="36486000" />
       <workItem from="1528245366654" duration="28556000" />
+<<<<<<< HEAD
       <workItem from="1528332692115" duration="10364000" />
       <workItem from="1528352939462" duration="2828000" />
+=======
+      <workItem from="1528332692115" duration="10166000" />
+>>>>>>> 46c6e0e4bc0f2c029ff68ccbcf58d4a00f22cf57
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="92938000" />
+=======
+    <option name="totallyTimeSpent" value="89912000" />
+>>>>>>> 46c6e0e4bc0f2c029ff68ccbcf58d4a00f22cf57
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1382" height="745" extended-state="0" />
@@ -1296,7 +1309,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647059" sideWeight="0.4924357" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 46c6e0e4bc0f2c029ff68ccbcf58d4a00f22cf57
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1769,6 +1786,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources.dev/mmall.properties">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
@@ -1779,6 +1797,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26128265">
           <caret line="5" column="58" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+=======
+        <state vertical-scroll-proportion="2.4827585">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+>>>>>>> 46c6e0e4bc0f2c029ff68ccbcf58d4a00f22cf57
           <folding />
         </state>
       </provider>
