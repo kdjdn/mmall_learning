@@ -89,12 +89,13 @@ public class CloseOrderTask {
         log.info("关闭订单定时任务结束");
     }
 
+    //Redisson实现分布式锁
     //    @Scheduled(cron="0 */1 * * * ?")
     public void closeOrderTaskV4(){
         RLock lock = redissonManager.getRedisson().getLock(Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK);
         boolean getLock = false;
         try {
-            if(getLock = lock.tryLock(0,50, TimeUnit.SECONDS)){
+            if(getLock = lock.tryLock(0,5, TimeUnit.SECONDS)){//尝试获取锁（等待时间，自动解锁时间，时间单位）等待时间设为零，避免wait-timeout，即同一次schedule执行时，两个进程都拿到锁
                 log.info("Redisson获取到分布式锁:{},ThreadName:{}",Const.REDIS_LOCK.CLOSE_ORDER_TASK_LOCK,Thread.currentThread().getName());
                 int hour = Integer.parseInt(PropertiesUtil.getProperty("close.order.task.time.hour","2"));
 //                iOrderService.closeOrder(hour);

@@ -27,11 +27,12 @@ public class RedissonManager {
     private static Integer redis1Port = Integer.parseInt(PropertiesUtil.getProperty("redis1.port"));
     private static String redis2Ip = PropertiesUtil.getProperty("redis2.ip");
     private static Integer redis2Port = Integer.parseInt(PropertiesUtil.getProperty("redis2.port"));
+    //可以把ip放入数组，下面通过遍历初始化所有的redis连接，实现动态节点加载
 
     @PostConstruct
     private void init(){
         try {
-            config.useSingleServer().setAddress(new StringBuilder().append(redis1Ip).append(":").append(redis1Port).toString());
+            config.useSingleServer().setAddress(new StringBuilder().append(redis1Ip).append(":").append(redis1Port).toString());//加载单服务single server
 
             redisson = (Redisson) Redisson.create(config);
 
@@ -41,6 +42,6 @@ public class RedissonManager {
         }
     }
 
-
+//Redisson这个版本不支持一致性算法，spring session也不支持，可以单独使用一个redis，或者让他们单独使用一个database,在一个redis里面进行区分
 
 }

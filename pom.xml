@@ -259,6 +259,7 @@
       <version>1.2.0.RELEASE</version>
     </dependency>
 
+    <!--redisson实现分布式锁-->
     <dependency>
       <groupId>org.redisson</groupId>
       <artifactId>redisson</artifactId>
